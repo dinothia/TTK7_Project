@@ -1,15 +1,15 @@
-load('Data/vanvikan/imu_measurements_2_3')
+load('Data/vanvikan/imu_measurements_1_2')
 
 start_idx = 2e4;
 signal_x = imuData.acceleration(1,start_idx:end);
 signal_y = imuData.acceleration(2,start_idx:end);
-signal = sqrt(signal_x.^2 + signal_y.^2);
+signal = signal_x;%sqrt(signal_x.^2 + signal_y.^2);
 t = imuData.t_imu(start_idx:end);
 t = t-t(1);
 sample_rate = mean(1./diff(t));
 %signal = lowpass(signal,10,250);
 open_figure('IMU Data')
-plot(signal)
+plot(t,signal)
 
     
 
