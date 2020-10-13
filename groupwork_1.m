@@ -1,7 +1,7 @@
 clc; clear; close all;
 
 offset = false;
-noise = true;
+noise = false;
 %% Generate signal
 N = 3000;
 fs = 1000;  % Hz
