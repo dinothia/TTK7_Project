@@ -1,1 +1,1 @@
-# -TTK7_Adaptive_Data_Analysis
+# TTK7_Project
