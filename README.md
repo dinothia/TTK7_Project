@@ -10,9 +10,9 @@ Vanvikan day 1 is main focus
 
 
 # Todo
-Lable dataset
-Pre-processing of the imu data
-Karakterisering av kollisjon
-    Plots av eksempel på kollisjoner
-Deteksjon av kollisjon
-    Trenger ikke nødvendigvis implemere klassifisering, bare plot som viser tydelig når kolisjonen skjer 
+* Lable dataset
+* Pre-processing of the imu data
+* Karakterisering av kollisjon
+    * Plots av eksempel på kollisjoner
+* Deteksjon av kollisjon
+    * Trenger ikke nødvendigvis implemere klassifisering, bare plot som viser tydelig når kolisjonen skjer 
