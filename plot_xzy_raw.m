@@ -24,7 +24,7 @@ plot(t,collisions, 'color', 'k')
 grid on;
 xlim([t(1),t(end)]);
 ylim([-2,2]);
-ylabel("acceleration [m/s^2]");
+ylabel("acc [m/s^2]");
 xlabel("time [s]");
 legend("x-axis", "contacts", 'Location','northwest');
 
@@ -34,7 +34,7 @@ plot(t,collisions, 'color', 'k')
 grid on;
 ylim([-2,2]);
 xlim([t(1),t(end)]);
-ylabel("acceleration [m/s^2]");
+ylabel("acc [m/s^2]");
 xlabel("time [s]");
 legend("y-axis", "contacts", 'Location','northwest');
 
@@ -44,7 +44,7 @@ plot(t,collisions, 'color', 'k')
 grid on;
 ylim([-2,2]);
 xlim([t(1),t(end)]);
-ylabel("acceleration [m/s^2]");
+ylabel("acc [m/s^2]");
 xlabel("time [s]");
 legend("z-axis", "contacts", 'Location','northwest');
 
