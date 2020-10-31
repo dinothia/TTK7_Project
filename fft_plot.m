@@ -24,15 +24,21 @@ t1 = t1- imuData.t_imu(1);
 sample_rate = mean(1./diff(t));
 %signal = lowpass(signal,10,250);
 %open_figure('IMU Data','clearFig',false)
-figure(1);clf
+fig1=figure(1);clf
+subplot(3,1,1)
 hold on
 plot(t,signal)
 plot(t1,signal1)
+ylim([-1,1]);
+xlim([t(1),t1(end)]);
 xlabel('time [s]')
-ylabel('acceleration [m/s^2]')
-    
+ylabel("acc [m/s^2]");
+legend('First 30 sec w. no contact','Last 30 sec w. contacts', 'Location','southwest');
+xlabel("time [s]");
+grid on;
 
 
+%% FFT
 L = length(t);
 Y = fft(signal);
 
@@ -56,24 +62,30 @@ end_freq = 40;
 end_freq_idx = ceil(end_freq/diff(f(1:2)));
 
 %open_figure('FFT result','newFig',1)
-figure(2);clf
-subplot(2,1,1)
+subplot(3,1,2)
 hold on
 plot(f,P1) 
 plot(f1,P11) 
 ylim([0,0.1])
+xlim([0 125]);
 xlabel('frequenzy [Hz]')
 ylabel('Amplitude')
-legend('First 30 sec','Last 30 sec')
+legend('First 30 sec w. no contact','Last 30 sec w. contacts')
+grid on;
 
-subplot(2,1,2)
+
+subplot(3,1,3)
 hold on
 plot(f,P1) 
 plot(f1,P11) 
 xlim([0,5])
 ylim([0,0.1])
-legend('First 30 sec','Last 30 sec')
+legend('First 30 sec w. no contact','Last 30 sec w. contacts')
 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('frequenzy [Hz]')
 ylabel('Amplitude')
+grid on;
+
+saveas(fig1,'Img/y_fft_split','epsc')
+

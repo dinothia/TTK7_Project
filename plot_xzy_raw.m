@@ -19,34 +19,34 @@ clf;
 fig = figure(1);
 
 subplot(311);
-plot(t, signal_x); hold on;
+plot(t, signal_x, 'color', 'r'); hold on;
 plot(t,collisions, 'color', 'k')
 grid on;
 xlim([t(1),t(end)]);
 ylim([-2,2]);
 ylabel("acc [m/s^2]");
 xlabel("time [s]");
-legend("x-axis", "contacts", 'Location','northwest');
+legend("x-axis", "contacts along y-axis", 'Location','northwest');
 
 subplot(312);
-plot(t, signal_y); hold on;
+plot(t, signal_y, 'color', 'g'); hold on;
 plot(t,collisions, 'color', 'k')
 grid on;
 ylim([-2,2]);
 xlim([t(1),t(end)]);
 ylabel("acc [m/s^2]");
 xlabel("time [s]");
-legend("y-axis", "contacts", 'Location','northwest');
+legend("y-axis", "contacts along y-axis", 'Location','northwest');
 
 subplot(313);
-plot(t, signal_z); hold on;
+plot(t, signal_z, 'color', 'b'); hold on;
 plot(t,collisions, 'color', 'k')
 grid on;
 ylim([-2,2]);
 xlim([t(1),t(end)]);
 ylabel("acc [m/s^2]");
 xlabel("time [s]");
-legend("z-axis", "contacts", 'Location','northwest');
+legend("z-axis", "contacts along y-axis", 'Location','northwest');
 
 
 saveas(fig,'xyz_raw','epsc')
