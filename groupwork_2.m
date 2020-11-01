@@ -38,7 +38,7 @@ open_figure('STFT','clearFig',true);
 
 %Same window size as the stationarity of signal 3 of the signal
 window_size = 1*sample_rate;
-window_size = fix(length(signal)/100);
+window_size = fix(length(signal)/100);en til lengste kollisjon og vurdere vindu
 spectrogram(signal,window_size,floor(window_size*0.5),800,sample_rate)
 %xlim([0,50])
 

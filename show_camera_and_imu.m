@@ -15,7 +15,8 @@ trip = 2;
 
 time = quay+num2str(trip)+"_inn";
 bagName = quay+num2str(trip)+"_inn.bag";
-bag = rosbag(path+days(day)+bagName);
+path = '/home/dino/Documents/Prosjektoppgave/Datasets/trondheim2_inn.bag';
+bag = rosbag(path);
 
 %% Show camera and imu plot
 get_camera_and_imu(bag)
