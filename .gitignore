@@ -1,2 +1,5 @@
 # Matlab temp backup files
 *.m~
+
+# MacOS index files
+*.DS_Store
