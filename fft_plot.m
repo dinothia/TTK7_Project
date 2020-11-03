@@ -10,8 +10,8 @@ start_idx = length(imuData.acceleration(1,:))-250*60;
 
 assert(start_idx<end_idx);
 
-signal_y = imuData.acceleration(2,start_idx:end_idx);
-signal_y1 = imuData.acceleration(2,start_idx1:end_idx1);
+signal_y = imuData.acceleration(1,start_idx:end_idx);
+signal_y1 = imuData.acceleration(1,start_idx1:end_idx1);
 
 signal = signal_y;
 signal1 = signal_y1;
