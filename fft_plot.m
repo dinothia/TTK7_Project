@@ -21,9 +21,12 @@ t = t- imuData.t_imu(1);
 t1 = imuData.t_imu(start_idx1:end_idx1);
 
 t1 = t1- imuData.t_imu(1);
+
+t1 = t1 - t(1);
+t =  t - t(1);
+
 sample_rate = mean(1./diff(t));
-%signal = lowpass(signal,10,250);
-%open_figure('IMU Data','clearFig',false)
+
 fig1=figure(1);clf
 subplot(3,1,1)
 hold on
