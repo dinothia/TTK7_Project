@@ -37,7 +37,7 @@ xlim([t(1),t(end)]);
 ylim([-2,2]);
 ylabel("acc [m/s^2]");
 xlabel("time [s]");
-legend("x-axis", "contacts along y-axis", 'Location','northwest');
+legend("contacts along y-axis", "x-axis", 'Location','northwest');
 
 subplot(312);
 plot(t,collisions, '--k'); hold on;
@@ -47,7 +47,7 @@ ylim([-2,2]);
 xlim([t(1),t(end)]);
 ylabel("acc [m/s^2]");
 xlabel("time [s]");
-legend("y-axis", "contacts along y-axis", 'Location','northwest');
+legend("contacts along y-axis", "y-axis", 'Location','northwest');
 
 subplot(313);
 plot(t,collisions, '--k'); hold on;
@@ -57,7 +57,7 @@ ylim([-2,2]);
 xlim([t(1),t(end)]);
 ylabel("acc [m/s^2]");
 xlabel("time [s]");
-legend("z-axis", "contacts along y-axis", 'Location','northwest');
+legend("contacts along y-axis", "z-axis", 'Location','northwest');
 
 
 saveas(fig,'Img/xyz_raw','epsc')
