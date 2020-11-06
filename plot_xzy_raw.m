@@ -1,7 +1,7 @@
 %% Load raw data
 load('Data/vanvikan/imu_measurements_1_2')
 
-start_idx = length(imuData.acceleration(1,:))-250*60;
+start_idx = length(imuData.acceleration(1,:))-250*35.7443;
 end_idx = length(imuData.acceleration(1,:))-250*0;
 
 
@@ -30,8 +30,8 @@ clf;
 fig = figure(1);
 
 subplot(311);
-plot(t, signal_x, 'color', 'r'); hold on;
-plot(t,collisions, '--k')
+plot(t,collisions, '--k'); hold on;
+plot(t, signal_x, 'color', 'r');
 grid on;
 xlim([t(1),t(end)]);
 ylim([-2,2]);
@@ -40,8 +40,8 @@ xlabel("time [s]");
 legend("x-axis", "contacts along y-axis", 'Location','northwest');
 
 subplot(312);
-plot(t, signal_y, 'color', 'g'); hold on;
-plot(t,collisions, '--k')
+plot(t,collisions, '--k'); hold on;
+plot(t, signal_y, 'color', '#458b00'); 
 grid on;
 ylim([-2,2]);
 xlim([t(1),t(end)]);
@@ -50,8 +50,8 @@ xlabel("time [s]");
 legend("y-axis", "contacts along y-axis", 'Location','northwest');
 
 subplot(313);
-plot(t, signal_z, 'color', 'b'); hold on;
-plot(t,collisions, '--k')
+plot(t,collisions, '--k'); hold on;
+plot(t, signal_z, 'color', 'b');
 grid on;
 ylim([-2,2]);
 xlim([t(1),t(end)]);
@@ -60,7 +60,7 @@ xlabel("time [s]");
 legend("z-axis", "contacts along y-axis", 'Location','northwest');
 
 
-saveas(fig,'xyz_raw','epsc')
+saveas(fig,'Img/xyz_raw','epsc')
 
 %currentFigure = gcf;xlabel("bins");
 %title(currentFigure.Children(end), "IMU linear acceleration");
