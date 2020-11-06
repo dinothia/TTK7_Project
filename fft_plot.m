@@ -1,11 +1,11 @@
 load('Data/vanvikan/imu_measurements_1_2')
 
 end_idx1 = length(imuData.acceleration(1,:))-250*0;
-start_idx1 = length(imuData.acceleration(1,:))-250*30;
+start_idx1 = length(imuData.acceleration(1,:))-250*35.7443;
 
 % 
 end_idx = length(imuData.acceleration(1,:))-250*30;
-start_idx = length(imuData.acceleration(1,:))-250*60;
+start_idx = length(imuData.acceleration(1,:))-250*2*35.7443;
 
 
 assert(start_idx<end_idx);
@@ -23,20 +23,22 @@ t1 = imuData.t_imu(start_idx1:end_idx1);
 t1 = t1- imuData.t_imu(1);
 
 t1 = t1 - t(1);
+t1 = t1 - 35.7443;
 t =  t - t(1);
+t =  t - 35.7443;
 
 sample_rate = mean(1./diff(t));
 
 fig1=figure(1);clf
 subplot(3,1,1)
 hold on
-plot(t,signal)
-plot(t1,signal1)
+plot(t,signal, 'color', 'k')
+plot(t1,signal1, 'color', 'r')
 ylim([-1,1]);
 xlim([t(1),t1(end)]);
 xlabel('time [s]')
 ylabel("acc [m/s^2]");
-legend('First 30 sec w. no contact','Last 30 sec w. contacts', 'Location','southwest');
+legend('no contacts','with contacts', 'Location','southwest');
 xlabel("time [s]");
 grid on;
 
@@ -67,23 +69,23 @@ end_freq_idx = ceil(end_freq/diff(f(1:2)));
 %open_figure('FFT result','newFig',1)
 subplot(3,1,2)
 hold on
-plot(f,P1) 
-plot(f1,P11) 
-ylim([0,0.1])
+plot(f,P1, 'color', 'k') 
+plot(f1,P11, 'color', 'r')
+ylim([0,0.06])
 xlim([0 125]);
 xlabel('frequenzy [Hz]')
 ylabel('Amplitude')
-legend('First 30 sec w. no contact','Last 30 sec w. contacts')
+legend('no contacts', 'with contacts')
 grid on;
 
 
 subplot(3,1,3)
 hold on
-plot(f,P1) 
-plot(f1,P11) 
+plot(f,P1, 'color', 'k') 
+plot(f1,P11, 'color', 'r') 
 xlim([0,5])
-ylim([0,0.1])
-legend('First 30 sec w. no contact','Last 30 sec w. contacts')
+ylim([0,0.06])
+legend('no contacts', 'with contacts')
 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('frequenzy [Hz]')
